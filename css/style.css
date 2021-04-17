@@ -91,9 +91,9 @@ a{
     }
 .title span{
         display: block;
-        width: 64px;
+        width: 67px;
         height: 4px;
-        margin-top: 15px;
+        margin-top: 8px;
         background-color: #79239f;
     }
 /****************************Header****************************/
@@ -134,13 +134,17 @@ font-weight: 900;
     font-weight: 500;
    
 }
-.nav__item.active{
-background-color:#4d0d69;
-color: #9f67b8;
+.lang{
+    transition: color 0.3s ease-in;
+    transition:background 0.6s ease-in;
+}
+.lang.active{
+    background:#4d0d69;
+    color: #9f67b8;
 }
 .header__text{
     width: 65%;
-    margin: 18% auto 0;
+    margin: 17% auto 0;
     font-size: 37px;
     font-weight: 300;
     text-align: center;
@@ -151,12 +155,10 @@ color: #9f67b8;
     opacity: 1;
 }
 .header__tel{
-margin-top: 5%;
-padding-bottom: 20%;
-font-size: 44px;
-font-weight: 900;
-letter-spacing: 1.76px;
-text-align: center;
+    margin-top: 2.4%;
+    padding-bottom: 19%;
+    font-size: 44px;
+    font-weight: 900;
 }
 .header__tel a{
     display: flex;
@@ -174,25 +176,25 @@ text-align: center;
 
 /*****************Section Contacts************************/
 .contacts{
-    padding: 15% 0;
+    padding:6% 0 7% 0;
     color: #000000;
     background-color: #ffffff;
 }
 
 
 .contacts__department{
-    margin: 51px 0 43px 0;
+    margin: 45px 0 30px 0;
     font-size: 30.5px;
     font-weight: bold;
     text-transform: uppercase;
 }
 .contacts__info div{
-    margin-top: 26px;
+    margin-top: 24px;
     font-size: 19.5px;
     font-weight: normal;
 }
 .contacts__info div img{
-    padding-right: 15px;
+    padding-right: 12px;
 }
 .contacts__info-address a:last-of-type{
     margin-left: 21px;
@@ -203,12 +205,15 @@ text-align: center;
 .contacts__info-phone{
     font-size: 21.5px;
 }
+.contacts__info-phone a+a{
+    padding-left: 27px;
+}
 .contacts__info-mail{
     margin-top: 23px;
 }
 /*******************************Form*******************************/
 .form{
-    padding:95px 0 110px 0;
+    padding:6.1% 0 8% 0;
     background-color:#f1f2f3;
 }
 .form__title{
@@ -219,9 +224,12 @@ margin-bottom: 44px;
     flex-wrap: wrap;
     font-size: 18.5px;
 }
+.form__container .custom-select{
+    margin-bottom: 17px;
+}
 .form__container input{
     width: 100%;
-    margin: 24px 0 22px;
+    margin-bottom: 16px;
     padding: 20px 26px 22px 26px;
     border: none;
 }
@@ -234,7 +242,7 @@ margin-bottom: 44px;
 }
 .form__container button{
     width: 100%;
-    margin-top: 43px;
+    margin-top: 37px;
     padding: 25px 0 24px 0;
     background-color: #561075;
     color: #ffffff;
@@ -252,8 +260,8 @@ margin-bottom: 44px;
 .custom__checkbox{
     display: block;
     position: relative;
-    padding-left: 35px;
-    margin: 30px 0 43px 0;
+    padding-left: 40px;
+    margin: 30px 0 0 0;
     cursor: pointer;
     font-size: 18.5px;
     font-weight: normal;
@@ -283,7 +291,7 @@ margin-bottom: 44px;
     display: block;
   }
   .custom__checkbox .checkmark:after {
-    left: 11px;
+    left: 15px;
     top: -8px;
     width: 8px;
     height: 22px;
