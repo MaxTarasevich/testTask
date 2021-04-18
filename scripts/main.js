@@ -1,22 +1,22 @@
-/*********Toggle lang link */
+
+/*********Toggle lang link ********************************************/
+
 const lang = document.querySelectorAll(`.lang`)
 
-lang[1].classList.add(`active`)
-
-lang.forEach((item)=>{
-item.addEventListener(`click`,toggleItem)
-})
-
-function toggleItem(){
-    lang.forEach((item)=>{
-        item.classList.toggle(`active`)
-    })
+function toggleItem() {
+  lang.forEach((item)=>{
+      item.classList.toggle(`active`)
+  })
 }
 
+  lang[1].classList.add(`active`)
+
+  lang.forEach((item)=>{
+  item.addEventListener(`click`, toggleItem)
+  })
 
 
-
-
+  
 
 /**************Custom Select**************************/
 var x, i, j, l, ll, selElmnt, a, b, c;
