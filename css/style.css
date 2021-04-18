@@ -229,10 +229,13 @@ margin-bottom: 44px;
     margin-bottom: 17px;
 }
 .form__container input{
+    display: inline-block;
     width: 100%;
-    margin-bottom: 16px;
-    padding: 20px 26px 22px 26px;
+    padding: 20px 50px 22px 26px;
     border: none;
+}
+.form__container input.input-error{
+    border: 1px solid red;
 }
 .form__container textarea{
     width: 100%;
@@ -261,6 +264,35 @@ margin-bottom: 44px;
     color: #9f67b8;
 }
 
+.hidden {
+    display: none;
+}
+.icon {
+    width: 34px;
+    height: 34px;
+    position: absolute;
+    top: 20%; 
+    right: 10px;
+    pointer-events: none;
+    z-index: 2;
+}
+.icon.icon-success {
+      fill: green;
+}
+    
+.icon.icon-error {
+      fill: red;
+}
+.input-group {
+    width: 100%;
+    position: relative;
+    margin-bottom: 16px;
+  }
+  .error-message{
+      margin-top: 10px;
+      color: red;
+      font-size: 14px;
+  }
 /*************************Custom checkbox****************************/
 .custom__checkbox{
     display: block;
