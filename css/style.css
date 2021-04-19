@@ -127,6 +127,10 @@ font-weight: 900;
 .nav__item:first-of-type{
     margin-right: auto;
 }
+.nav__item img{
+    width: 138px;
+    height: 29px;
+}
 .nav__item:last-of-type{
     padding-left: 31px;
     font-family: Roboto;
@@ -193,7 +197,10 @@ font-weight: 900;
     font-weight: normal;
 }
 .contacts__info div img{
-    padding-right: 12px;
+    margin-right: 12px;
+    width: 21px;
+    height: 21px;
+    object-fit: contain;
 }
 .contacts__info-address a:last-of-type{
     display: inline-block;
@@ -209,8 +216,8 @@ font-weight: 900;
 .contacts__info-phone a+a{
     padding-left: 27px;
 }
-.contacts__info-mail{
-    margin-top: 23px;
+.contacts__info .contacts__info-mail{
+    margin-top:17px;
 }
 /*******************************Form*******************************/
 .form{
@@ -304,7 +311,7 @@ margin-bottom: 44px;
     display: block;
     position: relative;
     padding: 0 0 0 40px;
-    margin: 30px 0 0 0;
+    margin: 3px 0 0 0;
     cursor: pointer;
     font-size: 18.5px;
     font-weight: normal;

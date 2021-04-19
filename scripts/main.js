@@ -15,7 +15,12 @@ class FormValidator {
     let self = this
     
     this.form.addEventListener('submit', e => {
-	    e.preventDefault()
+      const invalid = document.querySelector(`.invalid`)
+      if(invalid != null){
+        e.preventDefault()
+      }
+	   
+
 	    self.fields.forEach(field => {
         const input = document.querySelector(`#${field}`)
         self.validateFields(input)
@@ -32,6 +37,8 @@ class FormValidator {
         self.validateFields(input)
       })
     })
+
+    
   }
   
   validateFields(field) {
@@ -58,18 +65,28 @@ class FormValidator {
       const customCheckbox = document.querySelector(`.custom__checkbox`)
       if(field.checked){
         customCheckbox.classList.remove(`error`)
+        customCheckbox.classList.remove(`invalid`)
       } else {
         customCheckbox.classList.add(`error`)
+        customCheckbox.classList.add(`invalid`)
       }
     }
 
      // check for a valid select
      if(field.tagName ===`SELECT`){
        const customSelect = document.querySelector(`.custom-select`)
+       const customSelectItems = document.querySelectorAll(`.custom-select div`)
+       customSelectItems.forEach((item)=>{
+        item.addEventListener(`click`,()=>{
+          customSelect.classList.remove(`error`)
+          customSelect.classList.remove(`invalid`)
+        })
+       })
       if(field.value == 0){
         customSelect.classList.add(`error`)
       } else {
         customSelect.classList.remove(`error`)
+        customSelect.classList.remove(`invalid`)
       }
      }
    
@@ -88,6 +105,7 @@ if(successIcon && errorIcon && errorMessage != null){
       if (errorMessage) { errorMessage.innerText = "" }
       successIcon.classList.remove('hidden')
       field.classList.remove('input-error')
+      field.classList.remove('invalid')
     } 
     
     if (status === "error") {
@@ -107,15 +125,6 @@ const fields = ["name", "email","message","checkbox","select"]
 
 const validator = new FormValidator(form, fields)
 validator.initialize()
-
-
-
-
-
-
-
-
-
 
 
 

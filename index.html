@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Test task.">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <title>MANAO</title>
 </head>
 <body>
@@ -84,7 +86,6 @@
                     administration@rdms.ru</a>
             </div>
 
-
         </div>
 
     </div>
@@ -101,7 +102,7 @@
 
             <div class="form__container">
 
-                <div class="custom-select">
+                <div class="custom-select invalid">
                     <select name="theme" id="select">
                         <option value="0"> Тема сообщения</option>
                         <option value="1"> Тема 1</option>
@@ -110,7 +111,7 @@
                     </select>
                 </div>
                 <div class="input-group">
-                <input type="text" name="name" id="name" placeholder="Ваше имя">
+                <input type="text" name="name" id="name" placeholder="Ваше имя" class="invalid">
 
                 <span class="error-message"></span>
                 <svg class="icon icon-success hidden hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
@@ -123,7 +124,7 @@
                 </div>
 
                 <div class="input-group">
-                <input type="email" name="email" id="email" placeholder="Ваш Е-mail">
+                <input type="email" name="email" id="email" placeholder="Ваш Е-mail" class="invalid">
 
                 <span class="error-message"></span>
                 <svg class="icon icon-success hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
@@ -135,9 +136,8 @@
                 </svg>
                 </div>
 
-
                 <div class="input-group">
-                <textarea name="message" id="message"  placeholder="Ваше сообщение"></textarea>
+                <textarea name="message" id="message"  placeholder="Ваше сообщение" class="invalid"></textarea>
                 
                 <span class="error-message"></span>
                 <svg class="icon icon-success hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
@@ -149,8 +149,7 @@
                 </svg>
                 </div>
 
-
-                <label for="checkbox" class="custom__checkbox">
+                <label for="checkbox" class="custom__checkbox invalid">
                     Даю согласие на обработку персональных данных
                 <input type="checkbox" name="checkbox" id="checkbox" checked> 
                 <span class="checkmark"></span>
