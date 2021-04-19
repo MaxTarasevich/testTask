@@ -483,4 +483,8 @@ margin-bottom: 44px;
 .select-items div,.select-selected{
     padding: 14px 14px 16px 18px;
 }
+.icon{
+    width: 20px;
+    height: 20px;
+}
 }
