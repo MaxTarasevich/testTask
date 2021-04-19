@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Test task.">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <title>MANAO</title>
 </head>
 <body>
@@ -84,7 +86,6 @@
                     administration@rdms.ru</a>
             </div>
 
-
         </div>
 
     </div>
@@ -101,22 +102,54 @@
 
             <div class="form__container">
 
-                <div class="custom-select">
-                    <select name="theme" id="theme">
+                <div class="custom-select invalid">
+                    <select name="theme" id="select">
                         <option value="0"> Тема сообщения</option>
                         <option value="1"> Тема 1</option>
                         <option value="2"> Тема 2</option>
                         <option value="3"> Тема 3</option>
                     </select>
                 </div>
+                <div class="input-group">
+                <input type="text" name="name" id="name" placeholder="Ваше имя" class="invalid">
 
-                <input type="text" name="name" id="name" placeholder="Ваше имя">
+                <span class="error-message"></span>
+                <svg class="icon icon-success hidden hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+          
+                <svg class="icon icon-error hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+                </svg>
+                </div>
 
-                <input type="email" name="email" id="email" placeholder="Ваш Е-mail">
+                <div class="input-group">
+                <input type="email" name="email" id="email" placeholder="Ваш Е-mail" class="invalid">
 
-                <textarea name="message" id="message"  placeholder="Ваше сообщение"></textarea>
+                <span class="error-message"></span>
+                <svg class="icon icon-success hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
 
-                <label for="checkbox" class="custom__checkbox">
+                <svg class="icon icon-error hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+                </svg>
+                </div>
+
+                <div class="input-group">
+                <textarea name="message" id="message"  placeholder="Ваше сообщение" class="invalid"></textarea>
+                
+                <span class="error-message"></span>
+                <svg class="icon icon-success hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+
+                <svg class="icon icon-error hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+                </svg>
+                </div>
+
+                <label for="checkbox" class="custom__checkbox invalid">
                     Даю согласие на обработку персональных данных
                 <input type="checkbox" name="checkbox" id="checkbox" checked> 
                 <span class="checkmark"></span>

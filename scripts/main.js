@@ -1,3 +1,138 @@
+/**************************Form Validation****************************/
+
+class FormValidator {
+  constructor(form, fields) {
+    this.form = form
+    this.fields = fields
+  }  
+  
+  initialize() {
+    this.validateOnEntry()
+    this.validateOnSubmit()
+  }
+  
+  validateOnSubmit() {
+    let self = this
+    
+    this.form.addEventListener('submit', e => {
+      const invalid = document.querySelector(`.invalid`)
+      if(invalid != null){
+        e.preventDefault()
+      }
+	   
+
+	    self.fields.forEach(field => {
+        const input = document.querySelector(`#${field}`)
+        self.validateFields(input)
+      })
+    })
+  }
+  
+  validateOnEntry() {
+    let self = this
+    this.fields.forEach(field => {
+      const input = document.querySelector(`#${field}`)
+      
+      input.addEventListener('input', event => {
+        self.validateFields(input)
+      })
+    })
+
+    
+  }
+  
+  validateFields(field) {
+  
+    // Check presence of values
+    if (field.value.trim() === "") {
+      this.setStatus(field, `Поле ${field.getAttribute(`placeholder`)} не заполнено`, "error")
+    } else {
+      this.setStatus(field, null, "success")
+    }
+    
+    // check for a valid email address
+    if (field.type === "email") {
+      const re = /\S+@\S+\.\S+/
+      if (re.test(field.value)) {
+        this.setStatus(field, null, "success")
+      } else {
+        this.setStatus(field, "Введите валидный e-mail", "error")
+      }
+    }
+
+     // check for a valid checkbox 
+    if(field.type === "checkbox") {
+      const customCheckbox = document.querySelector(`.custom__checkbox`)
+      if(field.checked){
+        customCheckbox.classList.remove(`error`)
+        customCheckbox.classList.remove(`invalid`)
+      } else {
+        customCheckbox.classList.add(`error`)
+        customCheckbox.classList.add(`invalid`)
+      }
+    }
+
+     // check for a valid select
+     if(field.tagName ===`SELECT`){
+       const customSelect = document.querySelector(`.custom-select`)
+       const customSelectItems = document.querySelectorAll(`.custom-select div`)
+       customSelectItems.forEach((item)=>{
+        item.addEventListener(`click`,()=>{
+          customSelect.classList.remove(`error`)
+          customSelect.classList.remove(`invalid`)
+        })
+       })
+      if(field.value == 0){
+        customSelect.classList.add(`error`)
+      } else {
+        customSelect.classList.remove(`error`)
+        customSelect.classList.remove(`invalid`)
+      }
+     }
+   
+  }
+
+  setStatus(field, message, status) {
+    
+    const successIcon = field.parentElement.querySelector('.icon-success')
+    const errorIcon = field.parentElement.querySelector('.icon-error')
+    const errorMessage = field.parentElement.querySelector('.error-message')
+
+if(successIcon && errorIcon && errorMessage != null){
+
+    if (status === "success") {
+      if (errorIcon) { errorIcon.classList.add('hidden') }
+      if (errorMessage) { errorMessage.innerText = "" }
+      successIcon.classList.remove('hidden')
+      field.classList.remove('input-error')
+      field.classList.remove('invalid')
+    } 
+    
+    if (status === "error") {
+      if (successIcon) { successIcon.classList.add('hidden') }
+      field.parentElement.querySelector('.error-message').innerText = message
+      errorIcon.classList.remove('hidden')
+      field.classList.add('input-error')
+    }    
+  
+  }
+  
+  }
+}
+
+const form = document.querySelector('#form')
+const fields = ["name", "email","message","checkbox","select"]
+
+const validator = new FormValidator(form, fields)
+validator.initialize()
+
+
+
+
+
+
+
+
 
 /*********Toggle lang link ********************************************/
 
