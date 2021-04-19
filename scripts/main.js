@@ -55,18 +55,33 @@ class FormValidator {
 
      // check for a valid checkbox 
     if(field.type === "checkbox") {
-      if(field.value === "checked"){
-        this.setStatus(field, null, "success")
+      const customCheckbox = document.querySelector(`.custom__checkbox`)
+      if(field.checked){
+        customCheckbox.classList.remove(`error`)
       } else {
-        this.setStatus(field, null, "error")
+        customCheckbox.classList.add(`error`)
       }
     }
+
+     // check for a valid select
+     if(field.tagName ===`SELECT`){
+       const customSelect = document.querySelector(`.custom-select`)
+      if(field.value == 0){
+        customSelect.classList.add(`error`)
+      } else {
+        customSelect.classList.remove(`error`)
+      }
+     }
+   
   }
 
   setStatus(field, message, status) {
+    
     const successIcon = field.parentElement.querySelector('.icon-success')
     const errorIcon = field.parentElement.querySelector('.icon-error')
     const errorMessage = field.parentElement.querySelector('.error-message')
+
+if(successIcon && errorIcon && errorMessage != null){
 
     if (status === "success") {
       if (errorIcon) { errorIcon.classList.add('hidden') }
@@ -81,11 +96,14 @@ class FormValidator {
       errorIcon.classList.remove('hidden')
       field.classList.add('input-error')
     }    
+  
+  }
+  
   }
 }
 
 const form = document.querySelector('#form')
-const fields = ["name", "email"]
+const fields = ["name", "email","message","checkbox","select"]
 
 const validator = new FormValidator(form, fields)
 validator.initialize()
